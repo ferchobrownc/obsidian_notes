@@ -8,8 +8,8 @@ Para iniciar la conexión, se accede al host `bandit.labs.overthewire.org` a tra
 Accedemos al nivel inicial con las credenciales proporcionadas por la plataforma Bandit: usuario:  bandit0  y la contraseña: bandit0.
 
 Una vez dentro, ejecutamos el comando `ls` para listar los archivos disponibles  en el directorio. A continuación, utilizamos el `cat`para visualizar el contenido del  fichero.
-![](bash/OverTheWire/imgs/level0.png)
-![](docker_labs/imgs/level0-1.png)
+![](imgs/level0.png)
+![](imgs/level0-1.png)
 
 ## 🔥LEVEL 1 - user: `bandit1` 🔑 password: `ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If`
 - **Objetivo:** encontrar el password para el siguiente nivel
