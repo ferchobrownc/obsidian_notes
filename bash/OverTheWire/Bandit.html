@@ -1,0 +1,471 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Bandit</title>
+        <meta charset='utf-8'/>
+        <style>
+ .ͼ1.cm-focused {outline: 1px dotted #212121;}
+.ͼ1 {position: relative !important; box-sizing: border-box; display: flex !important; flex-direction: column;}
+.ͼ1 .cm-scroller {display: flex !important; align-items: flex-start !important; font-family: monospace; line-height: 1.4; height: 100%; overflow-x: auto; position: relative; z-index: 0; overflow-anchor: none;}
+.ͼ1 .cm-content[contenteditable=true] {-webkit-user-modify: read-write-plaintext-only;}
+.ͼ1 .cm-content {margin: 0; flex-grow: 2; flex-shrink: 0; display: block; white-space: pre; word-wrap: normal; box-sizing: border-box; min-height: 100%; padding: 4px 0; outline: none;}
+.ͼ1 .cm-lineWrapping {white-space: pre-wrap; white-space: break-spaces; word-break: break-word; overflow-wrap: anywhere; flex-shrink: 1;}
+.ͼ2 .cm-content {caret-color: black;}
+.ͼ3 .cm-content {caret-color: white;}
+.ͼ1 .cm-line {display: block; padding: 0 2px 0 6px;}
+.ͼ1 .cm-layer > * {position: absolute;}
+.ͼ1 .cm-layer {position: absolute; left: 0; top: 0; contain: size style;}
+.ͼ2 .cm-selectionBackground {background: #d9d9d9;}
+.ͼ3 .cm-selectionBackground {background: #222;}
+.ͼ2.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #d7d4f0;}
+.ͼ3.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #233;}
+.ͼ1 .cm-cursorLayer {pointer-events: none;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer {animation: steps(1) cm-blink 1.2s infinite;}
+@keyframes cm-blink {50% {opacity: 0;}}
+@keyframes cm-blink2 {50% {opacity: 0;}}
+.ͼ1 .cm-cursor, .ͼ1 .cm-dropCursor {border-left: 1.2px solid black; margin-left: -0.6px; pointer-events: none;}
+.ͼ1 .cm-cursor {display: none;}
+.ͼ3 .cm-cursor {border-left-color: #ddd;}
+.ͼ1 .cm-dropCursor {position: absolute;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer .cm-cursor {display: block;}
+.ͼ1 .cm-iso {unicode-bidi: isolate;}
+.ͼ1 .cm-announced {position: fixed; top: -10000px;}
+@media print {.ͼ1 .cm-announced {display: none;}}
+.ͼ2 .cm-activeLine {background-color: #cceeff44;}
+.ͼ3 .cm-activeLine {background-color: #99eeff33;}
+.ͼ2 .cm-specialChar {color: red;}
+.ͼ3 .cm-specialChar {color: #f78;}
+.ͼ1 .cm-gutters {flex-shrink: 0; display: flex; height: 100%; box-sizing: border-box; z-index: 200;}
+.ͼ1 .cm-gutters-before {inset-inline-start: 0;}
+.ͼ1 .cm-gutters-after {inset-inline-end: 0;}
+.ͼ2 .cm-gutters.cm-gutters-before {border-right-width: 1px;}
+.ͼ2 .cm-gutters.cm-gutters-after {border-left-width: 1px;}
+.ͼ2 .cm-gutters {background-color: #f5f5f5; color: #6c6c6c; border: 0px solid #ddd;}
+.ͼ3 .cm-gutters {background-color: #333338; color: #ccc;}
+.ͼ1 .cm-gutter {display: flex !important; flex-direction: column; flex-shrink: 0; box-sizing: border-box; min-height: 100%; overflow: hidden;}
+.ͼ1 .cm-gutterElement {box-sizing: border-box;}
+.ͼ1 .cm-lineNumbers .cm-gutterElement {padding: 0 3px 0 5px; min-width: 20px; text-align: right; white-space: nowrap;}
+.ͼ2 .cm-activeLineGutter {background-color: #e2f2ff;}
+.ͼ3 .cm-activeLineGutter {background-color: #222227;}
+.ͼ1 .cm-panels {box-sizing: border-box; position: sticky; left: 0; right: 0; z-index: 300;}
+.ͼ2 .cm-panels {background-color: #f5f5f5; color: black;}
+.ͼ2 .cm-panels-top {border-bottom: 1px solid #ddd;}
+.ͼ2 .cm-panels-bottom {border-top: 1px solid #ddd;}
+.ͼ3 .cm-panels {background-color: #333338; color: white;}
+.ͼ1 .cm-dialog label {font-size: 80%;}
+.ͼ1 .cm-dialog {padding: 2px 19px 4px 6px; position: relative;}
+.ͼ1 .cm-dialog-close {position: absolute; top: 3px; right: 4px; background-color: inherit; border: none; font: inherit; font-size: 14px; padding: 0;}
+.ͼ1 .cm-tab {display: inline-block; overflow: hidden; vertical-align: bottom;}
+.ͼ1 .cm-widgetBuffer {vertical-align: text-top; height: 1em; width: 0; display: inline;}
+.ͼ1 .cm-placeholder {color: #888; display: inline-block; vertical-align: top; user-select: none;}
+.ͼ1 .cm-highlightSpace {background-image: radial-gradient(circle at 50% 55%, #aaa 20%, transparent 5%); background-position: center;}
+.ͼ1 .cm-highlightTab {background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="20"><path stroke="%23888" stroke-width="1" fill="none" d="M1 10H196L190 5M190 15L196 10M197 4L197 16"/></svg>'); background-size: auto 100%; background-position: right 90%; background-repeat: no-repeat;}
+.ͼ1 .cm-trailingSpace {background-color: #ff332255;}
+.ͼ1 .cm-button {vertical-align: middle; color: inherit; font-size: 70%; padding: .2em 1em; border-radius: 1px;}
+.ͼ2 .cm-button:active {background-image: linear-gradient(#b4b4b4, #d0d3d6);}
+.ͼ2 .cm-button {background-image: linear-gradient(#eff1f5, #d9d9df); border: 1px solid #888;}
+.ͼ3 .cm-button:active {background-image: linear-gradient(#111, #333);}
+.ͼ3 .cm-button {background-image: linear-gradient(#393939, #111); border: 1px solid #888;}
+.ͼ1 .cm-textfield {vertical-align: middle; color: inherit; font-size: 70%; border: 1px solid silver; padding: .2em .5em;}
+.ͼ2 .cm-textfield {background-color: white;}
+.ͼ3 .cm-textfield {border: 1px solid #555; background-color: inherit;}
+.ͼ1 .cm-foldPlaceholder {background-color: #eee; border: 1px solid #ddd; color: #888; border-radius: .2em; margin: 0 1px; padding: 0 1px; cursor: pointer;}
+.ͼ1 .cm-foldGutter span {padding: 0 1px; cursor: pointer;}
+ .brat-modal .modal-button-container {
+  margin-top: 5px;
+}
+
+.brat-modal .disabled-setting {
+  opacity: 0.5;
+}
+
+.brat-modal .disabled-setting:hover {
+  cursor: not-allowed;
+}
+
+/* Input validation styles */
+.brat-settings .valid-input,
+.brat-modal .valid-repository {
+  border-color: var(--color-green);
+}
+.brat-settings .invalid-input,
+.brat-modal .invalid-repository {
+  border-color: var(--color-red);
+}
+.brat-settings .validation-error,
+.brat-modal .validation-error {
+  border-color: var(--color-orange);
+}
+
+/* Version selector */
+.brat-version-selector {
+  width: 100%;
+  max-width: 400px;
+  justify-content: left;
+}
+
+.brat-token-input {
+  min-width: 33%;
+}
+
+/* Token info container styles */
+.brat-token-info {
+  margin-top: 8px;
+  font-size: 0.8em;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: var(--background-secondary);
+}
+
+/* Token status indicators */
+.brat-token-info.valid,
+.brat-token-status.valid {
+  color: var(--color-green);
+}
+
+.brat-token-info.invalid,
+.brat-token-status.invalid {
+  color: var(--color-red);
+}
+
+.brat-token-info.valid {
+  border-left: 3px solid var(--color-green);
+}
+
+.brat-token-info.invalid {
+  border-left: 3px solid var(--color-red);
+}
+
+/* Token details and status */
+.brat-token-status {
+  margin-bottom: 4px;
+}
+
+.brat-token-details {
+  margin-top: 4px;
+  color: var(--text-muted);
+}
+
+/* Token warnings */
+.brat-token-warning {
+  color: var(--color-orange);
+  margin-top: 4px;
+}
+
+/* Token additional info */
+.brat-token-scopes,
+.brat-token-rate {
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Flex break utility */
+.brat-modal .break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+/* Validation status */
+.brat-modal .validation-status-error {
+  color: var(--text-error);
+}
+
+.brat-modal .validation-status {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 0.8em;
+  text-align: left;
+}
+
+.confirm-modal .ok-button {
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+/* Hide filtered plugin items */
+.brat-plugin-item[hidden] {
+  display: none !important;
+}
+
+/* Hide filtered theme items */
+.brat-theme-item[hidden] {
+  display: none !important;
+}
+
+/* Filter and button layout */
+.brat-filter-and-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0.75em 0;
+}
+
+.brat-filter-input {
+  max-width: 300px;
+  padding: 4px 8px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  background-color: var(--background-secondary);
+  color: var(--text-normal);
+}
+
+.brat-filter-input:focus {
+  outline: none;
+  border-color: var(--interactive-accent);
+}
+
+.brat-filter-and-button .setting-item {
+  border: none;
+  padding: 0;
+}
+
+.brat-filter-and-button .setting-item-control {
+  justify-content: flex-end;
+}
+ /*
+
+This CSS file will be included with your plugin, and
+available in the app when your plugin is enabled.
+
+If your plugin does not need CSS, delete this file.
+
+*/
+ /* src/styles.css */
+:root {
+  --shadow-color: 0deg 0% 0%;
+  --shadow-elevation-medium:
+    0.5px 0.5px 0.7px hsl(var(--shadow-color) / 0.14),
+    1.1px 1.1px 1.5px -0.9px hsl(var(--shadow-color) / 0.12),
+    2.4px 2.5px 3.3px -1.8px hsl(var(--shadow-color) / 0.1),
+    5.3px 5.6px 7.3px -2.7px hsl(var(--shadow-color) / 0.09),
+    11px 11.4px 15.1px -3.6px hsl(var(--shadow-color) / 0.07);
+}
+.image-rename-modal .modal {
+  width: 65%;
+  min-width: 600px;
+}
+.image-rename-modal .modal-content {
+  padding: 10px 5px;
+}
+.image-rename-modal .image-container {
+  display: flex;
+  justify-content: center;
+}
+.image-rename-modal .info {
+  padding: 10px 0;
+  color: var(--text-muted);
+  user-select: text;
+}
+.image-rename-modal .info li > span:nth-of-type(1) {
+  display: inline-block;
+  width: 6em;
+  margin-right: .5em;
+}
+.image-rename-modal .info li > span:nth-of-type(1):after {
+  content: ":";
+  float: right;
+}
+.image-rename-modal .image-container img {
+  display: block;
+  max-height: 300px;
+  box-shadow: var(--shadow-elevation-medium);
+}
+.image-rename-modal .setting-item-control input {
+  min-width: 300px;
+}
+.image-rename-modal .error {
+  border: 1px solid rgb(201, 90, 90);
+  color: rgb(134, 22, 22);
+  padding: 10px;
+}
+.image-rename-modal table {
+  font-size: .9em;
+  line-height: 1.8;
+  margin-bottom: 1.5em;
+  user-select: text;
+}
+.image-rename-modal table td {
+  padding-right: 1em;
+}
+.image-rename-modal table thead td {
+  font-weight: 700;
+}
+.image-rename-modal table tbody td .file-path {
+  font-size: .8em;
+  color: var(--text-faint);
+  line-height: 1;
+}
+.long-description-setting-item {
+  flex-wrap: wrap;
+}
+.long-description-setting-item .setting-item-description {
+  white-space: pre-wrap;
+  line-height: 1.3em;
+}
+.long-description-setting-item .setting-item-control {
+  padding-top: 10px;
+}
+.long-description-setting-item .setting-item-control input {
+  min-width: 300px;
+  width: 50%;
+}
+ 
+.pandoc-plugin-error {
+    color: red;
+}
+ undefined
+</style>
+    </head>
+    <body>
+<p dir="auto">Para iniciar la conexión, se accede al host <code>bandit.labs.overthewire.org</code> a través del puerto <code>2220</code>  utilizando el protocolo <code>**ssh**</code></p>
+<p dir="auto"><img alt="ssh.png" src="ssh.png" class="internal-embed"></p>
+<h2 data-heading="LEVEL 0  - user:`bandit0`  password: `bandit0`" dir="auto">LEVEL 0  - user:<code>bandit0</code>  password: <code>bandit0</code></h2>
+<ul>
+<li dir="auto"><strong>Objetivo general</strong>: encontrar el password para el siguiente nivel</li>
+<li dir="auto"><strong>Comando usados</strong>: <code>ls, cat</code></li>
+</ul>
+<p dir="auto">Accedemos al nivel inicial con las credenciales proporcionadas por la plataforma Bandit: usuario:  bandit0  y la contraseña: bandit0.</p>
+<p dir="auto">Una vez dentro, ejecutamos el comando <code>ls</code> para listar los archivos disponibles  en el directorio. A continuación, utilizamos el <code>cat</code>para visualizar el contenido del  fichero.</p>
+<p dir="auto"><img alt="level0-1.png" src="level0-1.png" class="internal-embed"></p>
+<h1 data-heading="LEVEL 1 - user: `bandit1` password: `ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If`" dir="auto">LEVEL 1 - user: <code>bandit1</code> password: <code>ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If</code></h1>
+<ul>
+<li dir="auto"><strong>Objetivo:</strong> encontrar el password para el siguiente nivel</li>
+<li dir="auto"><strong>Comando usados</strong>: ' ls, cat '</li>
+</ul>
+<p dir="auto">Tras acceder con este usuario, se ejecuta el comando <code>ls</code> para listas los archivos del directorio actual, donde se identifica un archivo cuyo nombre comienza con un  guion <code>"-"</code> (conocido como <strong>dashed filename</strong> ). En sistemas  Linux, los archivos cuyo nombre empiezan con <code>-</code> pueden confundirse con opciones de comando,  por lo que debemos usar rutas relativas al ejecutarlos o manipularlos correctamente. En este caso, para visualizar el contenido del archivo  mencionado se utiliza  <code>cat ./-</code>, de esta manera, se garantiza que el intérprete trate como un nombre de archivo y no como argumento, permitiendo mostrar correctamente su contenido.</p>
+<p dir="auto"><img alt="bandit1-1.png" src="bandit1-1.png" class="internal-embed"></p>
+<h2 data-heading="LEVEL 2 - user: bandit1 password: 263JGJPfgU6LtdEvgfWU1XP5yac29mFx" dir="auto">LEVEL 2 - user: bandit1 password: 263JGJPfgU6LtdEvgfWU1XP5yac29mFx</h2>
+<ul>
+<li dir="auto"><strong>Objetivo:</strong> encontrar el password para el siguiente nivel</li>
+<li dir="auto"><strong>Comando usados</strong>: ' ls, cat '<br>
+Tras  acceder  a este nivel, se ejecuta el comando <code>ls</code>, como resultado se identifica un archivo llamado <code>--spaces in this filename--</code>,  este archivo tiene dos particularidades,  comienza por '--',  y contiene tiene espacios. Al intentar visualizar su contenido con  <code>cat</code>, no se obtine el resultado esperado, ya que el intérprete puede confundir el nombre del archivo con opciones del comando, además de verse afectado por los espacios en el nombre.<br>
+Por consiguiente, para solucionar este problema, es necesarios escapar correctamente el nombre del archivo, existen varias formas de hacerlo:</li>
+<li dir="auto">con comillas dobles ´"` </li>
+<li dir="auto">con comillas simples  '`</li>
+<li dir="auto">con <code>\</code>antes de cada espacio del nombre del archivo<br>
+Todas estas formas debemos usar rutas relativas al ejecutarlos o manipularlos y así visualizar el contenido del archivo correctamente.</li>
+</ul>
+<p dir="auto"><img alt="bandit2-1.png" src="bandit2-1.png" class="internal-embed"><br>
+Notas :</p>
+<ul>
+<li dir="auto">Los espacios en nombres de archivo deben ser tratados cuidadosamente en la terminal</li>
+<li dir="auto">El uso de comillas o caracteres de escape es fundamental para evitar errores de interpretación.</li>
+</ul>
+<h2 data-heading="LEVEL 3 - user: bandit3 password: MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx" dir="auto">LEVEL 3 - user: bandit3 password: MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx</h2>
+<ul>
+<li dir="auto"><strong>Objetivo:</strong> encontrar el password para el siguiente nivel</li>
+<li dir="auto"><strong>Comando usados</strong>: ' ls, cd, cat '</li>
+</ul>
+<p dir="auto"><img alt="bandit3-1.png" src="bandit3-1.png" class="internal-embed"></p>
+<p dir="auto">Tras acceder a este nivel, se ejecuta el comando <code>ls</code> para listar todos los archivos del directorio actual. Se identifica un directorio llamado <code>inhere</code>, por lo que  nos movemos a él con el comando <code>cd</code>. A continuación, ejecutamos el comando <code>ls</code>para listar los archivos; como resultado, el directorio esta vacío. Por ello, procedemos a ejecutar el comando <code>ls -la</code> para listar todos los archivos, incluso los ocultos. De esta forma,encontramos  un archivo oculto llamado <code>...Hiding-Fom-You</code>. Finalmente, utilizamos el comando <code>cat</code> para visualizar su contenido: <code>cat ...Hiding-From-You</code>. </p>
+<p dir="auto"><img alt="bandit3-1.png" src="bandit3-1.png" class="internal-embed"></p>
+<h1 data-heading="LEVEL 4- user: bandit4 password: 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ" dir="auto">LEVEL 4- user: bandit4 password: 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ</h1>
+<ul>
+<li dir="auto"><strong>Objetivo:</strong> encontrar el password para el siguiente nivel</li>
+<li dir="auto"><strong>Comando usados</strong>: ' ls, cd, find, cat '</li>
+</ul>
+<p dir="auto"> Tras acceder a este nivel,  ejecutamos el comando <code>ls</code>para listar los archivos, nos encontramos con el directorio<code>inhere</code>, accedemos con el comando <code>cd</code>, ejecutamos nuevamente <code>ls</code>, como resultado tenemos varios archivos. Necesitaremos buscar que tipo de archivo es de texto, de esta menera sabremos cual abrir, asi no tendremos que ver cada archivo de forma manual. </p>
+<p dir="auto"> Procedemos a ejecutar el siguiente comando: <code>find . -type f -exec {} \ ; </code> Este comando recorre de forma recursiva el directorio actual y todos los sub-directorios. Cada vez que encuentra un archivo, ejecuta el comando <code>file</code>sobre él, mostrando como resultado el tipo de cada archivo. De esta manera sabremos que archivo contiene tipo texto, luego ejecutamos un <code>cat</code>para ver su contenido.</p>
+<p dir="auto">Explicamos detalladamente el comando anterior:</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Explicación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>find</strong></td>
+<td>Es una herramienta de Linux que permite buscar archivos y directorios dentro de una ruta especifica.</td>
+</tr>
+<tr>
+<td><strong>.</strong> (punto)</td>
+<td>Indica que la búsqueda se realizará en el directorio actual.</td>
+</tr>
+<tr>
+<td><strong>-type f</strong></td>
+<td>Filtra los resultados para mostrar únicamente archivos (excluyendo directorios)</td>
+</tr>
+<tr>
+<td><strong>-exec</strong></td>
+<td>Permite ejecutar un comando sobre cada archivo encontrado</td>
+</tr>
+<tr>
+<td><strong>file</strong></td>
+<td>Es el comando que se ejecutará sobre cada archivo. Su función es identificar el tipo de archivo (texto, binario, etc.)</td>
+</tr>
+<tr>
+<td><strong>{}</strong></td>
+<td>Representa cada archivo encontrado durante la búsqueda. Es un marcador que <code>find</code>sustituye automáticamente por el nombre de cada archivo.</td>
+</tr>
+<tr>
+<td><strong>\ ; </strong></td>
+<td>Indica el final del comando que se ejecuta con <code>-exec</code>. La barra invertida (<code>\</code>) es necesaria para escapar el punto y coma.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li dir="auto">LEVEL 5- USER: bandit4 password: 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>LEVEL</th>
+<th>USER</th>
+<th>PASSWORD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LEVEL 0</td>
+<td>bandit0</td>
+<td>bandit0</td>
+</tr>
+<tr>
+<td>LEVEL 1</td>
+<td>bandit1</td>
+<td>ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If</td>
+</tr>
+<tr>
+<td>LEVEL 2</td>
+<td>bandit2</td>
+<td>263JGJPfgU6LtdEvgfWU1XP5yac29mFx</td>
+</tr>
+<tr>
+<td>LEVEL 3</td>
+<td>bandit3</td>
+<td>MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx</td>
+</tr>
+<tr>
+<td>LEVEL 4</td>
+<td>bandit4</td>
+<td>2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ</td>
+</tr>
+<tr>
+<td>LEVEL 5</td>
+<td>bandit5</td>
+<td>4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw</td>
+</tr>
+<tr>
+<td>LEVEL 6</td>
+<td>bandit6</td>
+<td></td>
+</tr>
+<tr>
+<td>LEVEL 7</td>
+<td>bandit7</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li dir="auto">find . - busca en la carpeta actual de subcarpetas</li>
+<li dir="auto">-type f solo archivos normales (descarta carpetas)</li>
+<li dir="auto">-exect file {} \ ; ejeuta file en cada archivo y te dice si es texto o binariio</li>
+<li dir="auto">| grep "ASCII text" - filtra solo los archivos que son human-redeable. Y descarta ejecutables o binarios</li>
+<li dir="auto">| awk file imprime algo como ./.hiddenfile: ASSI text y awk -F: separa por : y {print $1} toma solo el nombre del archivo</li>
+</ul>
+    </body>
+</html>
