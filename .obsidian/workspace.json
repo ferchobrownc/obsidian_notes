@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "bash/OverTheWire/Bandit.md",
+                "file": "bash/OverTheWire/imgs/Bandit.md",
                 "mode": "source",
                 "source": false
               },
@@ -162,11 +162,20 @@
       "templates:Insertar plantilla": false,
       "command-palette:Abrir paleta de comandos": false,
       "bases:Crear nueva base": false,
-      "obsidian42-brat:BRAT": false
+      "obsidian42-brat:BRAT": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0804560bc906f637",
+  "active": "f8b8b51a5f8a9e0c",
   "lastOpenFiles": [
+    "bash/OverTheWire/Bandit.md",
+    "fix_images_global.py",
+    "bash/OverTheWire/Sin título.md",
+    "bash/OverTheWire/imgs/Bandit.md",
+    "bash/OverTheWire/imgs/ssh.png",
+    ".py",
+    "bash/OverTheWire/.bak",
+    ".sh",
     "LICENSE",
     "fernandocastanonaty27.pub",
     "fernandocastanonaty27",
@@ -175,13 +184,11 @@
     "bash/OverTheWire/imgs/bandit31_commit.png",
     "bash/OverTheWire/imgs/bandit31ls.png",
     "Sin título 1.md",
-    "bash/OverTheWire/Bandit.md",
     "bash/OverTheWire/imgs/bandit30_pass.png",
     "bash/OverTheWire/imgs/bandit30_ls.png",
     "bash/OverTheWire/imgs/bandit30_log.png",
     "bash/OverTheWire/imgs/bandit29_gitshowdev.png",
     "bash/OverTheWire/imgs/bandit29_gitbranch.png",
-    "bash/OverTheWire/imgs/bandit29_gitlogshow.png",
     "networking/Estandares de red.md",
     "networking/Tipos de medios de red.md",
     "docker_labs/VeryEasy/Trust/README.md",
@@ -189,12 +196,7 @@
     "imgs",
     "bash/OverTheWire.md",
     "bash/OverTheWire",
-    "docker_labs/imgs",
-    "bash/OverTheWire/imgs",
     "Sin título.md",
-    "bash",
-    "networking",
-    "docker_labs/VeryEasy/firsthacking",
     "docker_labs/VeryEasy/Trust/imgs/GTFO.md",
     "hydra.md",
     "docker labs 1/Very Easy/Trust/Capturas_trust/README.md",
