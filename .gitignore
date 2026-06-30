@@ -1,5 +1,6 @@
-.obsidian/plugins/git-sync/data.json
 .obsidian/workspace.json
+.obsidian/cache/
+.trash/.obsidian/plugins/git-sync/data.json
 fernandocastanonaty27
 *.pem
 *.key
