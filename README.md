@@ -1,9 +1,11 @@
 # 🛡️ Cybersecurity Notes & Labs
 
-Repositorio personal de aprendizaje en ciberseguridad, pentesting y administración de sistemas.
+Repositorio personal de aprendizaje y práctica en ciberseguridad, y Linux  laboratorios reales, desafíos de línea de comandos y documentación estructurada.
 
 ---
+## 💼 En búsqueda de oportunidades
 
+Actualmente estoy en fase de aprendizaje activo y buscando oportunidades junior / prácticas en Ciberseguridad, soporte IT o entornos Linux.
 ## 📚 Contenido
 
 - Bash & Linux fundamentals
