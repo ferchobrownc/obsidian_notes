@@ -1,48 +1,42 @@
-# 🧠 Cybersecurity Notes (Obsidian Vault)
+# 🛡️ Cybersecurity Notes & Labs
 
-Repositorio personal de aprendizaje en ciberseguridad.
-
-## 🚀 Sobre este proyecto
-
-Este repositorio contiene mis apuntes y laboratorios prácticos mientras aprendo ciberseguridad desde cero.
-
-Uso Obsidian para documentar todo y GitHub para versionar mi progreso como si fuera código.
+Repositorio personal de aprendizaje en ciberseguridad, pentesting y administración de sistemas.
 
 ---
 
 ## 📚 Contenido
 
-### 🔹 OverTheWire (Bandit)
-- Resolución paso a paso de retos Linux
-- Capturas de comandos y resultados
-- Explicación de técnicas usadas
-
-### 🔹 Linux & Networking
-- Comandos básicos y avanzados
-- Análisis de red
-- Conceptos fundamentales
-
-### 🔹 Docker Labs
-- Laboratorios de seguridad en contenedores
-- Pruebas de aislamiento y configuración
-
----
-
-## 🛠️ Herramientas usadas
-
-- Obsidian
-- Git & GitHub
-- Linux (Arch)
-- Docker
+- Bash & Linux fundamentals
+- OverTheWire (Bandit walkthroughs)
+- Docker labs de práctica
+- Networking basics
+- Notas técnicas personales
 
 ---
 
 ## 🎯 Objetivo
 
-Construir una base sólida en ciberseguridad ofensiva mediante práctica constante y documentación estructurada.
+Documentar mi progreso como estudiante de ciberseguridad y construir una base sólida de conocimientos prácticos mediante laboratorios reales.
+
+---
+
+## 🧪 Labs incluidos
+
+- OverTheWire Bandit
+- Docker security labs
+- Ejercicios de red
+
+---
+
+## 🧠 Estructura del repo
+- bash/
+- docker_labs/
+- networking/
+- assets/
+
 
 ---
 
 ## 📌 Nota
 
-Este es un repositorio en crecimiento continuo mientras avanzo en mi formación.
+Este repositorio está en constante evolución.
