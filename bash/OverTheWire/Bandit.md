@@ -83,7 +83,7 @@ Con  base en estas pistas procedemos a realizar una búsqueda utilizando el sigu
 | **\|** (pipe) | se usa para conectar comandos                                                                    |
 | **xargs**     | toma entradas y las convierte en argumentos para otro comando                                    |
 | **cat**       | muestra el contenido de archivos en la terminal                                                  |
-|               |                                                                                                  |
+
 ![](imgs/bandit5.png)
 
 ## 🔥Level 6 - user bandit6 🔑password: HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
@@ -121,10 +121,13 @@ Tras acceder a este nivel, nos apoyamos de la pista proporcionada del mismo, la 
 - con el comando `cat data.txt` nos muestra el contenido del archivo
 - `|` -> redirige la salida del primer comando hacia el segundo. 
 - `grep millionth` -> filtra y muestra únicamente las líneas que contienen la palabra `millionth`
-cat data.txt | grep millionth
+´ cat data.txt | grep millionth`
+
 ![](imgs/{fileName}-{date}.png)
+
 Podemos simplificar este comando, de esta manera podemos optimizar recursos y velocidad con el siguiente comando: `grep millionth data.txt`
 - el `grep`realiza una búsqueda línea por línea en el archivo `data.txt`, busca si aparece la palabra `millionth` y al encontrar  una coincidencia imprime esa linea completa en pantalla.
+
 ![](imgs/{fileName}-{date}-1.png)
 
 ## 🔥 Level 8 - user bandit8 🔑password dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
@@ -149,6 +152,7 @@ A continuación, ejecutamos el siguiente comando para buscar posibles cadenas de
 - El comando `strings data.txt` extrae todas las cadenas de texto legibles contenidas en el archivo, incluso si este es binario. 
 - Con `grep "==="`filtramos únicamente las lineas que contienen el caracter `=`.
 Esto nos permite localizar la contraseña dentro del archivo.
+
 ![](imgs/{fileName}-{date}-3.png)
 
 
@@ -178,6 +182,7 @@ para ver el contenido del archivo, observamos que no se puede entender ya que es
 A continuación, ejecutamos 
 `cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-n'`
 como salida tenemos el archivo decodificado pudiendo así ver la contraseña con éxito.
+
 ![](imgs/bandit11.png)
 ##  🔥Level 12- bandit12 -🔑 password: 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
 - **Objetivo:** Encontrar la password para el siguiente nivel. 
@@ -265,6 +270,7 @@ Y listo — ahí está la contraseña del siguiente nivel.
 - Entender firmas de archivos (como `1f 8b 08` para gzip)
 - Manejo básico de compresión: `gzip`, `bzip2`, `tar`
 - Paciencia y método → este nivel es más de proceso que de dificultad técnica
+
 ![](imgs/bandit12.png)
 
 ##  🔥Leven 13 - bandit13 - password: FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
