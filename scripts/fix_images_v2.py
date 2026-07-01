@@ -8,7 +8,7 @@ ASSETS = ROOT / "assets" / "imgs"
 pattern = re.compile(r'!\[\]\((.*?)\)')
 
 for md in ROOT.rglob("*.md"):
-
+    print(f"Procesando: {md}")
     text = md.read_text(encoding="utf-8")
 
     def replace(match):

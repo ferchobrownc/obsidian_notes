@@ -1,6 +1,6 @@
 Para iniciar la conexión, se accede al host `bandit.labs.overthewire.org` a través del puerto `2220`  utilizando el protocolo **ssh**
 
-![](imgs/ssh.png)
+![](../../assets/imgs/ssh.png)
 ## 🔥LEVEL 0  - user:`bandit0`  🔑 password: `bandit0`
 - **Objetivo general**: encontrar el password para el siguiente nivel
 - **Comando usados**: `ls, cat`
@@ -8,8 +8,8 @@ Para iniciar la conexión, se accede al host `bandit.labs.overthewire.org` a tra
 Accedemos al nivel inicial con las credenciales proporcionadas por la plataforma Bandit: usuario:  bandit0  y la contraseña: bandit0.
 
 Una vez dentro, ejecutamos el comando `ls` para listar los archivos disponibles  en el directorio. A continuación, utilizamos el `cat`para visualizar el contenido del  fichero.
-![](imgs/level0.png)
-![](imgs/level0-1.png)
+![](../../assets/imgs/level0.png)
+![](../../assets/imgs/level0-1.png)
 
 ## 🔥LEVEL 1 - user: `bandit1` 🔑 password: `ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If`
 - **Objetivo:** encontrar el password para el siguiente nivel
@@ -17,7 +17,7 @@ Una vez dentro, ejecutamos el comando `ls` para listar los archivos disponibles 
 
 Tras acceder con este usuario, se ejecuta el comando `ls` para listas los archivos del directorio actual, donde se identifica un archivo cuyo nombre comienza con un  guion `"-"` (conocido como **dashed filename** ). En sistemas  Linux, los archivos cuyo nombre empiezan con `-` pueden confundirse con opciones de comando,  por lo que debemos usar rutas relativas al ejecutarlos o manipularlos correctamente. En este caso, para visualizar el contenido del archivo  mencionado se utiliza  `cat ./-`, de esta manera, se garantiza que el intérprete trate como un nombre de archivo y no como argumento, permitiendo mostrar correctamente su contenido.
 
-![](imgs/bandit1-1.png)
+![](../../assets/imgs/bandit1-1.png)
 
 ## 🔥LEVEL 2 - user: bandit1 🔑 password: 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
 - **Objetivo:** encontrar el password para el siguiente nivel
@@ -29,7 +29,7 @@ Tras acceder con este usuario, se ejecuta el comando `ls` para listas los archiv
  - con `\`antes de cada espacio del nombre del archivo
 Todas estas formas debemos usar rutas relativas al ejecutarlos o manipularlos y así visualizar el contenido del archivo correctamente.
 
-![](imgs/bandit2-1.png)
+![](../../assets/imgs/bandit2-1.png)
 Notas :
 - Los espacios en nombres de archivo deben ser tratados cuidadosamente en la terminal
 - El uso de comillas o caracteres de escape es fundamental para evitar errores de interpretación.
@@ -37,11 +37,11 @@ Notas :
 - **Objetivo:** encontrar el password para el siguiente nivel
 - **Comando usados**: ' ls, cd, cat '
  
-![](imgs/bandit3-1.png)
+![](../../assets/imgs/bandit3-1.png)
 
 Tras acceder a este nivel, se ejecuta el comando `ls` para listar todos los archivos del directorio actual. Se identifica un directorio llamado `inhere`, por lo que  nos movemos a él con el comando `cd`. A continuación, ejecutamos el comando `ls`para listar los archivos; como resultado, el directorio esta vacío. Por ello, procedemos a ejecutar el comando `ls -la` para listar todos los archivos, incluso los ocultos. De esta forma,encontramos  un archivo oculto llamado `...Hiding-Fom-You`. Finalmente, utilizamos el comando `cat` para visualizar su contenido: `cat ...Hiding-From-You`. 
 
-![](imgs/bandit3-1.png)
+![](../../assets/imgs/bandit3-1.png)
 ## 🔥LEVEL 4- user: bandit4  🔑password: 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
 - **Objetivo:** encontrar el password para el siguiente nivel
 - **Comando usados**: ' ls, cd, find, cat '
@@ -49,7 +49,7 @@ Tras acceder a este nivel, se ejecuta el comando `ls` para listar todos los arch
  Tras acceder a este nivel,  ejecutamos el comando `ls`para listar los archivos, nos encontramos con el directorio`inhere`, accedemos con el comando `cd`, ejecutamos nuevamente `ls`, como resultado tenemos varios archivos. Necesitaremos buscar que tipo de archivo es de texto, de esta manera sabremos cual abrir, así no tendremos que ver cada archivo de forma manual. 
  
  Procedemos a ejecutar el siguiente comando: `find . -type f -exec {} \ ; ` Este comando recorre de forma re cursiva el directorio actual y todos los sub-directorios. Cada vez que encuentra un archivo, ejecuta el comando `file`sobre él, mostrando como resultado el tipo de cada archivo. De esta manera sabremos que archivo contiene tipo texto, luego ejecutamos un `cat`para ver su contenido.
-![](imgs/bandit4-1.png)
+![](../../assets/imgs/bandit4-1.png)
 Explicamos detalladamente el comando anterior:
 
 | Comando       | Explicación                                                                                                                               |
@@ -84,7 +84,7 @@ Con  base en estas pistas procedemos a realizar una búsqueda utilizando el sigu
 | **xargs**     | toma entradas y las convierte en argumentos para otro comando                                    |
 | **cat**       | muestra el contenido de archivos en la terminal                                                  |
 
-![](imgs/bandit5.png)
+![](../../assets/imgs/bandit5.png)
 
 ## 🔥Level 6 - user bandit6 🔑password: HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
 - **Objetivo:** encontrar la password para el siguiente nivel
@@ -113,7 +113,7 @@ Explicamos los comandos utilizados:
 | **xargs**          | toma entradas y las convierte en argumentos para otro comando            |
 | **cat**            | muestra el contenido de archivos en la terminal                          |
 
-![](imgs/bandit6.png)
+![](../../assets/imgs/bandit6.png)
 ## 🔥Level 7 - user bandit7 - 🔑password morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
 - **Objetivo:** Encontrar la password del siguiente nivel
 - **Comandos utilizados:** `cat, grep`
@@ -183,7 +183,7 @@ A continuación, ejecutamos
 `cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-n'`
 como salida tenemos el archivo decodificado pudiendo así ver la contraseña con éxito.
 
-![](imgs/bandit11.png)
+![](../../assets/imgs/bandit11.png)
 ##  🔥Level 12- bandit12 -🔑 password: 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
 - **Objetivo:** Encontrar la password para el siguiente nivel. 
 - **Comandos utilizados:** `ls, gzip, xxd, gzip2, tr, file, head, cat' 
@@ -271,7 +271,7 @@ Y listo — ahí está la contraseña del siguiente nivel.
 - Manejo básico de compresión: `gzip`, `bzip2`, `tar`
 - Paciencia y método → este nivel es más de proceso que de dificultad técnica
 
-![](imgs/bandit12.png)
+![](../../assets/imgs/bandit12.png)
 
 ##  🔥Leven 13 - bandit13 - password: FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
 - **Objetivo:** Encontrar la password para el siguiente nivel
@@ -307,13 +307,13 @@ Ahora utilizamos la clave privada para autenticarnos como `bandit14`
 `ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220`
 - `-i sshkey.private`: especifica la clave privada
 - `-p 2220`: indica el puerto correcto
-![](imgs/bandit13-1.png)
+![](../../assets/imgs/bandit13-1.png)
 ### Obtención de la contraseña
 
 Una vez dentro como `bandit14`, ya tenemos permisos para leer la contraseña:
 `cat /etc/bandit_pass/bandit14`
 Esto nos devuelve la contraseña del  nivel 14
-![](imgs/bandit13_pass14-1.png)
+![](../../assets/imgs/bandit13_pass14-1.png)
 ## 🔥 Level 14 - bandit14 - password: MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
 - **Objetivo:** Encontrar la password para el siguiente nivel.
 - **Comandos utilizados:** `cat, nc`
@@ -336,7 +336,7 @@ El servicio valida la contraseña y devuelve como respuesta la contraseña del s
 
 ### Resultado
 Tras enviar la contraseña correctamente, el servidor responde con la contraseña del nivel `bandit15`
-![](imgs/bandit14-1.png)
+![](../../assets/imgs/bandit14-1.png)
 
 ##  🔥Level15 - bandit15 - 🔑password: 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
 - **Objetivo:** encontrar la password para el siguiente nivel.
@@ -361,7 +361,7 @@ Explicación:
 - `openssl s_client`: establece una conexión SSL/TLS con el servidor.
 - `-quiet`: elimina la información innecesaria, mostrando únicamente la respuesta del servidor. 
 
-![](imgs/bandit15.png)
+![](../../assets/imgs/bandit15.png)
 ## 🔥Level16 - bandit16 - 🔑password: kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
 - **Objetivo:** encontrar la password para el siguiente nivel 
 - **Comandos utilizados:** `nc, openssl, nano, chmod`
@@ -382,7 +382,7 @@ Utilizamos nmap:
 - `localhost`: en la ip local 
 Luego obtendremos los puertos abiertos que estan a la escucha en localhost, tambien los servicios, en el cual nos encontramos el puerto ` 31518/tcp open ssl/echo`y el puerto `31790/tcp open ssl/unknown`, luego de leer ambos, nos quedamos solo con el puerto `31790` ya que el servicio `ssl/echo` solo devuelve la misma entrada que le enviamos, mientras que el servicio `ssl/unknown `nos puede ofrecer una respuesta diferente, lo que indica que puede contener la solución del nivel. 
 
-![](imgs/bandit16_nmap.png)
+![](../../assets/imgs/bandit16_nmap.png)
 
 Tambien podemos usar: 
 `nc -zv localhost 31000-32000`
@@ -399,7 +399,7 @@ Cambiamos sus permisos para el que el servidor la reconozca y no de fallos, con 
 Accedemos al siguiente nivel con la clave privada
 `ssh -i bandit16.key bandit14@bandit.labs.overthewire.org -p 2220`
 procedemos a buscar la contraseña en `cat /etc/bandit_pass/bandit17` de esta manera ya tenemos la contraseña para guardarla y la clave privada. 
-![](imgs/bandit16_pass17.png)
+![](../../assets/imgs/bandit16_pass17.png)
 
 ## 🔥Level17 - bandit17 - 🔑password: EReVavePLFHtFlFsjn3hyzMlvSuSAcRD
 - **Objetivo:** encontrar la password para el siguiente nivel. 
@@ -416,7 +416,7 @@ Ejecutamos el comando
 - `| `conecta  la salida con otro comando 
 - `grep ">"` filtra la línea correspondiente al archivo nuevo.  
 como salida obtendremos la contraseña del siguiente nivel
-![](imgs/bandit17.png)
+![](../../assets/imgs/bandit17.png)
 
 
 ## 🔥Level18  - bandit18 - 🔑password: x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
@@ -438,7 +438,7 @@ Esto nos muestra el contenido del archivo, donde se encuentra la contraseña del
 
 Este nivel nos muestra cómo es posible evadir restricciones de inicio de sesión interactivo utilizando ejecución remota de comandos a través de SSH.
 
-![](imgs/bandit18.png)
+![](../../assets/imgs/bandit18.png)
 ## 🔥Level19  - bandit19 - 🔑password: cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
 - **Objetivo:** encontrar la password para el siguiente nivel.
 - **Comando utilizados:** `ls, cat, file`
@@ -457,7 +457,7 @@ podemos ver que tenemos un archivo con nombre bandit20, así que procedemos a ve
 como salida tenemos la contraseña y resuelto el nivel.
 
 Este tipo de configuraciones puede ser crítico en entornos reales, ya que un binario SUID mal configurado puede permitir escaladas de privilegios.
-![](imgs/bandit19.png)
+![](../../assets/imgs/bandit19.png)
 
 ## 🔥Level20  - bandit20 - 🔑password: 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
 - **Objetivo:** encontrar la contraseña para el siguiente nivel.
@@ -479,12 +479,12 @@ El binario se conecta al servidor y envía la contraseña de bandit20 automátic
 - `|`envía la salida al siguiente comando
 - `nc`netcat: es una herramienta para conexiones de red 
 - `-l 12345` el puerto de escucha 
-![](imgs/bandit20.png)
+![](../../assets/imgs/bandit20.png)
 
 Luego ejecutamos el archivo setuid en el mismo puerto.
 `./suconnect 12345`
 De esta manera, el binario valida la respuesta y devuelve la  contraseña para el siguiente nivel.
-![](imgs/bandit20pass.png)
+![](../../assets/imgs/bandit20pass.png)
 
 
 ## 🔥Level21  - bandit21 - 🔑password: EeoULMCra2q0dSkYj561DX7s1CpBuOBt
@@ -507,7 +507,7 @@ El script realiza lo siguiente:
 Se accede al archivo generado
 `cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv`
 Se obtiene la contraseña para el siguiente nivel
-![](imgs/bandit21.png)
+![](../../assets/imgs/bandit21.png)
 Una configuración insegura de cron puede provocar la exposición de credenciales cuando los scripts ejecutados por usuarios privilegiados escriben datos sensibles en ubicaciones accesibles como `/tmp`, permitiendo su lectura por otros usuarios. 
 
 ## 🔥Level22  - bandit22 - 🔑password: tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q
@@ -522,7 +522,7 @@ Se lista el contenido de la ruta:
 Entre los archivos encontramos, aparece `cronjob_bandit23`, que es el que nos interesa por su nombre. 
 Se ve visualiza el contenido 
 `cat /etc/cron.d/cronjob_bandit23`
-![](imgs/bandit22_cronjob.png)
+![](../../assets/imgs/bandit22_cronjob.png)
 
 Observamos que se ejecuta un script con nombre `cronjob_bandit23.sh`
 Se procede a ver el contenido del script
@@ -536,7 +536,7 @@ El resultado obtenido indica un cambio en el nombre del archivo en `/tmp`donde s
 Finalmente, se visualiza el contenido del archivo:
 `cat /tmp/8ca319486bfbbc3663ea0fbe81326349`
 De esta manera obtenemos la contraseña para el siguiente nivel.
-![](imgs/bandit22_pass.png)
+![](../../assets/imgs/bandit22_pass.png)
 
 ##  🔥Level23  - bandit23 - 🔑password: 0Zf11ioIjMVN551jX3CmStKLYqjk54Ga
 - **Objetivo:** encontrar la contraseña para el siguiente nivel.
@@ -576,14 +576,14 @@ También se otorgan permisos al directorio temporar para permitir que el cronjob
 `chmod 777 /tmp/tmp.eJYrF6GkQY`
 De igual manera se dan permisos al archivo.
 `chmod 777 password`
-![](imgs/bandit23_script.png)
+![](../../assets/imgs/bandit23_script.png)
 Finalmente se copia  el script a la ruta obtenida  en el `cronjob`. 
 `cp bandit24_password.sh /var/spool/bandit24/foo/bandit24_password.sh`
 Después de aproximadamente un minuto, el cronjob ejecutará el script automáticamente.
 Se verifica el contenido del archivo
 `cat password`
 Obteniendo la contraseña para el siguiente nivel. 
-![](imgs/bandit23_pass.png)
+![](../../assets/imgs/bandit23_pass.png)
 ## 🔥Level24  - bandit24 - 🔑password: gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
 - **Objetivo:** encontrar la contraseña para el siguiente nivel.
 - **Comandos utilizados:**
@@ -604,7 +604,7 @@ Contenido del script
     `echo gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8 $num >> possible_password.txt`
 `done`
 `cat possible_password.txt | nc localhost 30002 > result.txt`
-![](imgs/bandit24_script.png)
+![](../../assets/imgs/bandit24_script.png)
 Se otorgan permisos de ejecución al script
 `chmod +x force_brute.sh`
 A continuación se ejecuta el script
@@ -618,7 +618,7 @@ Se ordena y verifica el resultado
 - sort ordena el contenido del archivo
 - grep -v "Wrong": omite todo el contenido que comience o contenga esa palabra
 De esta manera tenemos como resultado la contraseña para el siguiente nivel.
-![](imgs/bandit24.png)
+![](../../assets/imgs/bandit24.png)
 
 
 ## 🔥Level25  - bandit25 - 🔑password: iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
@@ -636,7 +636,7 @@ como salida se observa `#!/bin/sh`que es la shell que esta utilizando.
 Tenemos información de la shell, se procede a listar los archivos
 `ls `
 Se observa una clave privada, la cual permitira la conexion por ssh al nivel bandit26
-![](imgs/bandit25_ls.png)
+![](../../assets/imgs/bandit25_ls.png)
 
 ### Solución
 Se debe dar permisos a la clave privada para que el usuario propietario pueda leer, modificar y ejecutar. 
@@ -645,24 +645,24 @@ Se procede a copiar la clave privada y a crear un archivo en la maquina local , 
 `nano bandit26.sshkey`
 `chmod 700 bandit26.sshkey`
 
-![](imgs/bandit25_key-1.png)
+![](../../assets/imgs/bandit25_key-1.png)
 A continuación nos conectamos por `ssh`con la clave privada
 	`ssh -i bandit26.sshkey bandit26@bandit.labs.overthewire.org -p 2220`
 Se observa que se  inicia sesión, pero la conexón se cierra porque ejecuta `/usr/bin/showtext`y esta ejecuta una **shell** `!/bin/sh`, anteriormente al verificar el contenido de este, el script llamado `showtext`abre un archivo con nombre `text.txt `con el programa `more`.
-![](imgs/bandit25_conection-1.png)
-![](imgs/bandit25_conectionclose-1.png)
+![](../../assets/imgs/bandit25_conection-1.png)
+![](../../assets/imgs/bandit25_conectionclose-1.png)
 Para evitar que se cierre la conexión se debe poner la terminal mas pequeña, de esta manera podemos ver el comando `more`, este nos permitirá usar `vim`, de esta manera podemos interactuar.
 Cuando se observa `more`, se presiona `v`para entrar en vim.
-![](imgs/bandit25_more.png)
+![](../../assets/imgs/bandit25_more.png)
 Se  ejecuta: 
 - `:e /etc/bandit_pass/bandit26`para obtener la contraseña directamente
-![](imgs/bandit25_e.png)
+![](../../assets/imgs/bandit25_e.png)
 - `:set shell=/bin/bash`para modificar la shell y asi poder interactuar. 
-![](imgs/bandit25_set.png)
+![](../../assets/imgs/bandit25_set.png)
 Finalmente `:shell`, de esta manera se tiene una shell interactiva .
 Se procede a buscar la contraseña para el siguiente nivel.
 `cat /etc/bandit_pass/bandit26`
-![](imgs/bandit25_pass.png)
+![](../../assets/imgs/bandit25_pass.png)
 ## 🔥Level26  - bandit26 - 🔑password: s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ
 - **Objetivo:** encontrar la contraseña para el siguiente nivel.
 - **Comandos utilizados:** `ssh, ls, cat, vim`
@@ -687,7 +687,7 @@ El archivo `bandit27-do`posee el bit `SUID` activado. Esto signicfica que, al ej
 Se procede a ejecutar el archivo y buscar la contraseña del nivel bandit27.
 `./bandit27-do cat /etc/bandit_pass/bandit27`
 De esta manera se obtiene la contraseña para el siguiente nivel.
-![](imgs/bandit26_pass.png)
+![](../../assets/imgs/bandit26_pass.png)
 ## 🔥Level27  - bandit27 - 🔑password: upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB
 - **Objetivo:** encontrar la contraseña para el siguiente nivel.
 - **Comandos utilizados:** `git, ls, cat, cd, ssh`
@@ -697,19 +697,19 @@ Para encontrar la contraseña del siguiente nivel, se indica que debemos descarg
 Se clona el repositorio de git 
 `git clone ssh://bandit27-git@bandit.labs.overthewire.org:2220/home/bandit27-git/repo`
 Se ingresa la contraseña , se descarga el repositorio.
-![](imgs/bandit27_conecction.png)
+![](../../assets/imgs/bandit27_conecction.png)
 Se listan los archivos
 `ls`
 Como salida tenemos un directorio con nombre`repo`
 Se accede a este y se listan los archivos nuevamente
 `cd repo`
 `ls`
-![](imgs/bandit27_conecction.png)
+![](../../assets/imgs/bandit27_conecction.png)
 Se obtiene un archivo con nombre `README`
 Se procede a ver su contenido
 `cat README`
 Como resultado se obtiene la contraseña para el siguiente nivel
-![](imgs/bandit27_pass.png)
+![](../../assets/imgs/bandit27_pass.png)
 
 ## 🔥Level28  - bandit28 - 🔑password: Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN
 - **Objetivo:** encontrar la contraseña para el siguiente nivel.
@@ -731,16 +731,16 @@ Se listan los archivos y se observa el archivo `README.md`, con extensión `.md`
 Se verifica su contenido 
 `cat README.md`
 No se observa información relevante.  
-![](imgs/bandit28_ls.png)
+![](../../assets/imgs/bandit28_ls.png)
 Se procede a verificar el historial de cambios del archivo con
 `git log`
 Al revisar el historial de commits, se identifica un commit anterior que contenía una versión diferente del archivo `README.md`
-![](imgs/bandit28_gitlog.png)
+![](../../assets/imgs/bandit28_gitlog.png)
 Para analizar las modificaciones introducidas en dicho commit, se ejecuta:
 `git show commit adc7f885a129baee883058b8a870739489f80194`
 Esto permite examinar el contenido exacto de la modificación.
 Se muestra en el `diff`del commit información relevante, incluida la contraseña para el siguiente nivel. 
-![](imgs/bandit28_gitshow.png)
+![](../../assets/imgs/bandit28_gitshow.png)
 Tras verificar cambios en el historial del repositorio y analizar el contenido del commit anterior, se recupera la información eliminada del archivo `README.md`, obteniendo la contraseña necesaria para el siguiente nivel. 
 
 
@@ -755,7 +755,7 @@ Este nivel, es similar a los dos anteriores, se debe clonar un repositorio git e
 Se clona el repositorio en nuestra maquina local 
 `git clone ssh://bandit29-git@bandit.labs.overthewire.org:2220/home/bandit29-git/repo`
 A continuación se introduce la contraseña de este nivel, la cual permitira la descarga del repositorio
-![](imgs/bandit29_gitclone.png)
+![](../../assets/imgs/bandit29_gitclone.png)
 A continuación se verifican los archivos
 `ls`
 Como resultado se observa un directorio con nombre `repo`
@@ -765,24 +765,24 @@ El resultado muestra un archivo con nombre `README.md` con extensión `.md` (Mar
 Posteriormente se verifica su contenido
 `cat README.md`
 Sin resultados relevantes en la salida. 
-![](imgs/bandit29_ls.png)
+![](../../assets/imgs/bandit29_ls.png)
 Se verifica el historial del git 
 `git log`
 Al verificar el historial se observa que hay modificación en uno de los commits
 Se inspecciona la modificación del commit
 `git show 921cad124cfe5b4ba9f648de1894f75656ff0ff4` 
-![](imgs/bandit29_gitlogshow.png)
+![](../../assets/imgs/bandit29_gitlogshow.png)
  Se observa que han habido cambios en el commit, sin poder ver la contraseña.
  Se procede a verificar las ramas con el comando 
  `git branch -a`
  Como salida se observa diferentes ramas, hay que verificar  cada una, entre ellas nos quedamos con  la rama con nombre `dev`
  `git switch dev`
- ![](imgs/bandit29_gitbranch.png)
+ ![](../../assets/imgs/bandit29_gitbranch.png)
  Luego de cambiar de rama, nuevamente se verifica el historial
  `git log`
  Posteriormente verificar el commit
  `git show 97622e03dcbefc7953e906cecbc8a602f84cba4a`
- ![](imgs/bandit29_gitshowdev.png)
+ ![](../../assets/imgs/bandit29_gitshowdev.png)
 Al observar  el historial del commit en la rama con nombre`dev`, se observa su contenido. Obteniendo la contraseña para el siguiente nivel 
  
 ## 🔥Level30 - bandit30 - 🔑password: qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL
@@ -806,7 +806,7 @@ De igual manera se listan  los archivos
 El comando devuelve un archivo con nombre `README.md`
 Se procede a ver su contenido
 `cat README.md`
-![](imgs/bandit30_ls.png)
+![](../../assets/imgs/bandit30_ls.png)
 No se observa información importante
 A continuación se verifica el historial del git
 `git log`
@@ -817,13 +817,13 @@ Este no muestra información importante
 Posteriormente se verifican las ramas
 `git branch -a`
 Como salida tampoco se obtiene información relevante
-![](imgs/bandit30_log.png)
+![](../../assets/imgs/bandit30_log.png)
 Al verificar los commits y las ramas no se obtiene información relevante, se revisan las etiquetas del repositorio, en Git se pueden almacenar referencias importantes mediante tag
 `git tag`
 El resultado muestra una etiqueta con nombre `secret`
 Se verifica el contenido
 `git show secret`
-![](imgs/bandit30_pass.png)
+![](../../assets/imgs/bandit30_pass.png)
 Este comando nos muestra el contenido de la etiqueta, la cual revela la contraseña del siguiente nivel.
 
 
@@ -848,7 +848,7 @@ Se accede al directorio clonado
 A continuación se verifica su contenido 
 `ls`
 Se encuentra un archivo con nombre `README`
-![](imgs/bandit31ls.png)
+![](../../assets/imgs/bandit31ls.png)
 Al verificar su contenido con 
 `cat README`
 Este indica que se debe subir un archivo al repositorio, con algunos criterios
@@ -866,12 +866,12 @@ Se verifica el estado el estado del repositorio
 `git status`
 Luego de haber añadido el archivo al repositorio, se procede a confirmar los cambios 
 `git commit -a`
-![](imgs/bandit31_gitadd.png)
+![](../../assets/imgs/bandit31_gitadd.png)
 Git informó que la rama local `master` estaba adelantada respecto a `origin/master` por un commit. Esto indica que existe al menos un commit almacenado localmente que todavía no ha sido enviado al repositorio remoto. 
 Para publicar dichos cambios y sincronizar ambas ramas se debe ejecutar 
 `git push -u origin master`.
 La opcion `-u`establece una relación de seguimiento (upstream) entre la rama local y la remota, permitiendo utilizar posteriormente `git push` sin especificar la rama. 
-![](imgs/bandit31_pass.png)
+![](../../assets/imgs/bandit31_pass.png)
 Este pedirá la contraseña del nivel, luego de introducirla se mostrara la contraseña para el siguiente nivel. 
 ## 🔥Level32 - bandit31 - 🔑password: 3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K 
 - **Objetivo:** encontrar la contraseña para el siguiente nivel.
