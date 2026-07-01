@@ -1,6 +1,6 @@
 Para iniciar la conexión, se accede al host `bandit.labs.overthewire.org` a través del puerto `2220`  utilizando el protocolo **ssh**
 
-![](imgs/ssh.png)
+![](assets/imgs/ssh.png)
 ## 🔥LEVEL 0  - user:`bandit0`  🔑 password: `bandit0`
 - **Objetivo general**: encontrar el password para el siguiente nivel
 - **Comando usados**: `ls, cat`
@@ -9,7 +9,7 @@ Accedemos al nivel inicial con las credenciales proporcionadas por la plataforma
 
 Una vez dentro, ejecutamos el comando `ls` para listar los archivos disponibles  en el directorio. A continuación, utilizamos el `cat`para visualizar el contenido del  fichero.
 ![](assets/imgs/level0.png)
-![](imgs/level0-1.png)
+![](assets/imgs/level0-1.png)
 
 ## 🔥LEVEL 1 - user: `bandit1` 🔑 password: `ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If`
 - **Objetivo:** encontrar el password para el siguiente nivel
