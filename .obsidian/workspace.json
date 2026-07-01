@@ -183,6 +183,7 @@
   },
   "active": "3a5f63651d4c28a7",
   "lastOpenFiles": [
+    "fix_images_v2.py",
     "scripts/fix_images_global.py",
     "scripts/fix_images_v2.py",
     "scripts",
@@ -204,7 +205,6 @@
     "bash/OverTheWire/Bandit.md",
     "Sin título 1.md",
     "bash/OverTheWire/Bandit 1.md",
-    "fix_images_v2.py",
     "fix_images_global.py",
     "bash/OverTheWire/Sin título.md",
     ".py",
