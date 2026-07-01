@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ROADMAP.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ROADMAP"
+              "title": "README"
             }
           }
         ],
@@ -181,8 +181,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f8b8b51a5f8a9e0c",
+  "active": "3a5f63651d4c28a7",
   "lastOpenFiles": [
+    "scripts/fix_images_global.py",
+    "scripts/fix_images_v2.py",
+    "scripts",
+    "ROADMAP.md",
+    "README.md",
     "bash/OverTheWire/Bandit_backup.md",
     "assets/imgs/bandit3-1.png",
     "assets/imgs/bandit7.png",
@@ -196,8 +201,6 @@
     "assets/imgs/shell.png",
     "assets/imgs",
     "assets",
-    "README.md",
-    "ROADMAP.md",
     "bash/OverTheWire/Bandit.md",
     "Sin título 1.md",
     "bash/OverTheWire/Bandit 1.md",
@@ -208,8 +211,6 @@
     "bash/OverTheWire/.bak",
     ".sh",
     "LICENSE",
-    "fernandocastanonaty27.pub",
-    "fernandocastanonaty27",
     "networking/Estandares de red.md",
     "networking/Tipos de medios de red.md",
     "docker_labs/VeryEasy/Trust/README.md",
