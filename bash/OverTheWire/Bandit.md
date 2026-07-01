@@ -1,6 +1,5 @@
 Para iniciar la conexión, se accede al host `bandit.labs.overthewire.org` a través del puerto `2220`  utilizando el protocolo **ssh**
 
-![](../../assets/imgs/ssh.png)
 ## 🔥LEVEL 0  - user:`bandit0`  🔑 password: `bandit0`
 - **Objetivo general**: encontrar el password para el siguiente nivel
 - **Comando usados**: `ls, cat`

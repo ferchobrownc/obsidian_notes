@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "bash/OverTheWire/Bandit.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Bandit"
             }
           }
         ],
@@ -183,12 +183,12 @@
   },
   "active": "3a5f63651d4c28a7",
   "lastOpenFiles": [
+    "README.md",
     "fix_images_v2.py",
     "scripts/fix_images_global.py",
     "scripts/fix_images_v2.py",
     "scripts",
     "ROADMAP.md",
-    "README.md",
     "bash/OverTheWire/Bandit_backup.md",
     "assets/imgs/bandit3-1.png",
     "assets/imgs/bandit7.png",
@@ -210,7 +210,6 @@
     ".py",
     "bash/OverTheWire/.bak",
     ".sh",
-    "LICENSE",
     "networking/Estandares de red.md",
     "networking/Tipos de medios de red.md",
     "docker_labs/VeryEasy/Trust/README.md",
