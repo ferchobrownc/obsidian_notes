@@ -50,4 +50,8 @@ Construir una base sólida en ciberseguridad mediante práctica constante, docum
 Este repositorio evoluciona constantemente a medida que avanzo en mi aprendizaje.
 ## 📌 Nota
 
-Este repositorio está en constante evolución.
+Este repositorio refleja mi proceso de aprendizaje. Cada laboratorio, nota y documentación representan algo que he practicado y entendido. Mi intención es seguir ampliándolo a medida que adquiera nuevos conocimientos y experiencia.
+
+---
+
+Si encuentras algún error o tienes alguna sugerencia, estaré encantado de aprender y mejorar.
